@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>Tower Task</title>
+		<link rel="stylesheet" href="styles.css" />
+		<!-- Google Fonts: Poppins -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<!-- Google Material Icons -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+	</head>
+	
+	<body>
+		<header>
+			<div class="logo" tabindex="0" aria-label="Collaborative task manager">Tower Task</div>
+			<div id="auth-info" aria-live="polite"></div>
+		</header>
+		
+		<main>
+			<section id="auth-section" aria-label="User authentication form">
+				<h2 id="auth-title">Conecte-se</h2>
+				<form id="auth-form" novalidate>
+					<label for="auth-username">Nome</label>
+					<input type="text" id="auth-username" name="username" autocomplete="username" required aria-required="true" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9_]+$" placeholder="Digite seu nome" />
+					
+					<label for="auth-password">Senha</label>
+					<input type="password" id="auth-password" name="password" autocomplete="current-password" required aria-required="true" minlength="8" placeholder="Digite sua senha" />
+					
+					<label for="auth-role" id="role-label" class="hidden">Perfil</label>
+					<select id="auth-role" name="role" aria-labelledby="role-label" class="hidden" aria-required="true">
+						<option value="member">Membro</option>
+						<option value="admin">Administrador</option>
+					</select>
+					
+					<button type="submit" id="auth-submit" aria-label="Submit authentication form">Conecte-se</button>
+					<div id="auth-switch" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle register/login form">Não tem uma conta? Cadastre-se</div>
+					<p id="auth-message" role="alert" aria-live="assertive" style="height:1.5em; margin-top:6px; color:#ef4444;"></p>
+				</form>
+			</section>
+			
+			<section id="app-container" class="hidden" aria-label="Task management application">
+				<div id="task-header">
+					<h1>Tower Task</h1>
+					<div>
+						<select id="task-filter" aria-label="Filter tasks by assignee or status">
+							<option value="all">Mostrar todas as tarefas</option>
+							<optgroup label="Status">
+								<option value="todo">Pendência</option>
+								<option value="in-progress">Em Andamento</option>
+								<option value="done">Pronto</option>
+							</optgroup>
+							<optgroup label="Assignee">
+								<!-- responsáveis adicionados dinamicamente -->
+							</optgroup>
+						</select>
+					</div>
+				</div>
+				
+				<form id="new-task-form" aria-label="Add a new task" autocomplete="off">
+					<input id="new-task-title" type="text" placeholder="Título da tarefa" required aria-required="true" maxlength="100" autocomplete="off" />
+					<input id="new-task-desc" type="text" placeholder="Descrição (opcional)" autocomplete="off" />
+					<select id="new-task-priority" aria-label="Select priority" required aria-required="true">
+						<option value="" disabled selected>Prioridade</option>
+						<option value="low">Baixo</option>
+						<option value="medium">Médio</option>
+						<option value="high">Alto</option>
+					</select>
+					<select id="new-task-assignee" aria-label="Assign task to user" required aria-required="true">
+						<!-- preenchido dinamicamente -->
+					</select>
+					<select id="new-task-status" aria-label="Set initial status" required aria-required="true">
+						<option value="todo">Pendência</option>
+						<option value="in-progress">Em Andamento</option>
+						<option value="done">Pronto</option>
+					</select>
+					<button id="add-task-btn" type="submit" aria-label="Add new task">Adicionar Tarefa</button>
+				</form>
+				
+				<div id="columns-container" role="list" aria-label="Task columns for each status">
+					<section class="column" id="todo-column" aria-label="To Do tasks">
+						<h2>Pendência</h2>
+						<div class="tasks-list" id="todo-list" role="list"></div>
+					</section>
+					<section class="column" id="in-progress-column" aria-label="In Progress tasks">
+						<h2>Em Andamento</h2>
+						<div class="tasks-list" id="in-progress-list" role="list"></div>
+					</section>
+					<section class="column" id="done-column" aria-label="Done tasks">
+						<h2>Pronto</h2>
+						<div class="tasks-list" id="done-list" role="list"></div>
+					</section>
+				</div>
+			</section>
+		</main>
+		<div id="notification-container" aria-live="polite" aria-atomic="true"></div>
+		<footer aria-label="Footer information">
+			&copy; 2025 Tower Task — Sua Ferramenta colaborativa de gerenciamento de tarefas - Powered by JavaScript, HTML & CSS
+		</footer>
+		<script src="app.js"></script>		
+	</body>
+</html>
+
