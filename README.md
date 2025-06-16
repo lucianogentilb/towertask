@@ -1,6 +1,6 @@
-# Plataforma de Blog Escalonável
+# Ferramenta Colaborativa de Gerenciamento de Tarefas
 
-Este projeto é uma plataforma de blog construída com HTML, CSS e JavaScript, com foco em escalabilidade e oferecendo suporte a Markdown, funcionalidade de pesquisa e autenticação de usuário.
+Este projeto é uma aplicação web interativa e colaborativa para gerenciamento de tarefas, desenvolvida exclusivamente com HTML, CSS e JavaScript.
 
 ## Sumário
 
@@ -14,36 +14,33 @@ Este projeto é uma plataforma de blog construída com HTML, CSS e JavaScript, c
 
 ## Visão Geral
 
-Esta plataforma de blog foi projetada para ser altamente escalável, permitindo que você adicione e gerencie um grande número de artigos. O suporte a Markdown facilita a criação e formatação de conteúdo, enquanto a funcionalidade de pesquisa permite aos usuários encontrar rapidamente artigos relevantes. A autenticação de usuário garante que apenas usuários autorizados possam criar, editar e excluir artigos.
+Este projeto foi criado para demonstrar habilidades de desenvolvimento front-end, incluindo autenticação de usuário, controle de acesso baseado em função, sincronização de dados em tempo real (simulada) e um design responsivo.
 
 ## Funcionalidades
 
-- **Criação e Edição de Artigos:** Suporte para criação e edição de artigos usando Markdown.
-- **Pesquisa:** Uma função de pesquisa que permite aos usuários encontrar artigos por título ou conteúdo.
-- **Autenticação de Usuário:** Sistema de autenticação para proteger o conteúdo e as funcionalidades.
-- **Escalabilidade:** Arquitetura projetada para suportar um grande número de artigos e usuários.
-- **Interface Responsiva:** Design amigável para dispositivos móveis e desktops.
+- ** Autenticação de Usuário (Simulada): Sistema de login e registro gerenciado diretamente no lado do cliente, utilizando localStorage para persistência de dados do usuário.
+- ** Funções de Usuário e Controle de Acesso: Implementação de perfis de usuário com funções distintas (Administrador e Membro), que controlam o acesso e a visibilidade de certas funcionalidades da interface.
+- ** Quadro de Tarefas Colaborativo: Uma interface intuitiva para criar, visualizar e gerenciar tarefas. A colaboração multiusuário é simulada através da sincronização de dados entre múltiplas abas do navegador, proporcionando uma experiência semelhante a atualizações em tempo real.
+- ** Notificações em Tempo Real: Sistema de notificação integrado que alerta os usuários sobre atualizações de tarefas e alterações de permissão, garantindo que todos estejam sempre cientes das modificações.
+- ** Design Responsivo: Layout de interface de usuário limpo e adaptável, garantindo uma experiência otimizada em diversos tamanhos de tela, desde desktops até dispositivos móveis.
+- ** Persistência e Sincronização de Dados: Utilização de localStorage para persistir o estado da aplicação e o Storage Event para simular a sincronização de dados entre diferentes abas do mesmo navegador. Isso cria uma experiência de "tempo real" limitada ao ambiente do cliente.
 
 ## Tecnologias Utilizadas
 
 - **HTML5:** Estrutura do conteúdo.
 - **CSS3:** Estilização da interface.
 - **JavaScript (ES6+):** Lógica da aplicação e funcionalidades.
-- **Markdown:** Formatação de artigos.
-- https://cdn.jsdelivr.net/npm/marked/marked.min.js: CDN Marked.js para análise de Markdown.
-
 
 ## Instalação e Uso
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/lucianogentilb/blogbishop
+   git clone https://github.com/lucianogentilb/towertask
 2. Navegue até o diretório do projeto.
 3. Abra o arquivo index.html no seu navegador.
-4. Se você estiver utilizando um backend, configure-o de acordo com as instruções do backend.
 
 ## Estrutura do Projeto
-blogsphere/
+towertask/
 ├── index.html    # Página principal
 ├── css/
 │   └── style.css # Folha de estilo
